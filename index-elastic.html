@@ -1,0 +1,781 @@
+<html data-ng-app="ecs"
+    class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths ng-scope"
+    lang="en-us" style="display: block;"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+
+        langflow-chat {
+            position: fixed;
+            bottom: -400px;
+            right: 90px; /* Muda o chat para o lado esquerdo */
+            width: 350px;
+            height: 500px;
+        }
+
+        
+
+    </style>
+
+    <meta charset="utf-8">
+    <title>Elastic Online Merchandise Store</title>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-VDF18TD4DX&amp;l=dataLayer&amp;cx=c&amp;gtm=45He53q1v9207096500za200&amp;tag_exp=102482433~102788824~102803279~102813109~102887799~102926062"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5M99TS3D"></script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5M99TS3D');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/favicon.ico" rel="shortcut icon"
+        type="image/x-icon">
+    <link href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-precomposed.png"
+        rel="apple-touch-icon-precomposed">
+    <link href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-57x57-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="57x57">
+    <link href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-72x72-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link
+        href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-114x114-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link
+        href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-144x144-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link
+        href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-152x152-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="152x152">
+    <link
+        href="https://store.ecompanystore.com//elastic/content/img/favicon/ELS/apple-touch-icon-180x180-precomposed.png"
+        rel="apple-touch-icon-precomposed" sizes="180x180">
+
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/modernizr?v=c1ivlke9ly2d5BnQoP-W7l-4lA2BkZB9V5pCwh3NfMs1"></script>
+
+
+    <link href="https://store.ecompanystore.com//elastic/Content/styles/ELS/els.css" rel="stylesheet" type="text/css"
+        media="all">
+    <link
+        href="https://store.ecompanystore.com//elastic/Components/componentstyles?v=xzhXxiLz5Bf1F1fFFjepTCAEvlTACHmXeWe3AhkdSHQ1"
+        rel="stylesheet">
+
+
+
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="pragma" content="no-store, no-cache">
+    <meta http-equiv="expires" content="Mon, 01 Jan 1990 00:00:00 GMT">
+    <script type="text/javascript">
+        var App = App || {};
+        App.Configuration = {};
+        App.Authentication = {};
+        App.Session = {};
+
+        App.Configuration.RootPath = '/elastic/';
+        App.Configuration.Host = 'https://store.ecompanystore.com';
+        App.Configuration.UseCORS = 'false';
+        App.Authentication.LoginUrl = '/elastic/Shop/Signin';
+        App.Session.RewardCampaignNamingConvention = "Reward";
+        App.Configuration.IsProd = 'True';
+    </script>
+    <style>
+        html {
+            display: none;
+        }
+    </style>
+    <script>
+        if (self == top) {
+            document.documentElement.style.display = 'block';
+        } else {
+            top.location = self.location;
+        }
+    </script>
+</head>
+
+<body data-ng-controller="mainCtrl" class="persistent-scrollbar update-cart" style="zoom: 1;">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M99TS3D" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div data-ng-controller="headerCtrl" class="ng-scope">
+        <div id="skipToMainContent">
+            <a class="skip-to-main" tabindex="0" href="javascript:void(0)" data-href="#mainContent" accesskey="S"
+                data-ng-keypress="scrollToMainContent()" data-ng-click="scrollToMainContent()"
+                id="skip-to-main-content">Skip to main content</a>
+        </div>
+        <div class="" role="complementary">
+            <!-- ngIf: showCookieWarningMessage -->
+            <div data-ng-if="showCookieWarningMessage" class="animate-cookie-message ng-scope" style="">
+                <button class="btn btn-naked pull-right" data-ng-click="markCookieWarningMessageAsViewed()"
+                    title="Dismiss" name="Dismiss" aria-label="Dismiss"><i class="fa fa-times"></i></button>
+                <p>This site uses cookies to ensure that you have the best experience. By continuing, we assume that you
+                    consent to receive all cookies. <strong><a target="_self" href="#/privacy"
+                            data-ng-click="markCookieWarningMessageAsViewed()" title="Learn more.">Learn
+                            more.</a></strong></p>
+            </div><!-- end ngIf: showCookieWarningMessage -->
+
+            <div class="store-settings-bar">
+                <div class="container">
+                    <nav>
+                        <ul>
+                            <li>Location: Americas (<a href="https://store.ecompanystore.com/elastic/Shop/International/?so=force"
+                                    title="Change location">change</a>)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="visually-hidden-header"><span class="h1 sr-only">Company Store</span></div>
+        <header id="main-header" class="standard-header">
+            <div class="container">
+                <div style="display: inline-flex; width: 100%; justify-content: space-between;">
+                    <!-- nav - top right links, to be always shown -->
+                    <a href="https://store.ecompanystore.com//elastic/Shop/#/" title="Go to the store home page"
+                        aria-label="CompanyStore Logo, Link to the store home page" id="headerImg">
+                        <div class="brand"></div>
+                    </a>
+                    <div>
+                        <div class="always-present top-nav">
+                            <div class="top-nav-wrapper-item">
+                                <!-- ngIf: signInVisible -->
+                                <div class="top-nav-container-item ng-scope" ng-if="signInVisible"
+                                    title="Sign in to your account."><a
+                                        href="https://store.ecompanystore.com/elastic/Shop/Signin?returnUrl=/elastic/Shop">Sign In</a></div>
+                                <!-- end ngIf: signInVisible -->
+                                <!-- ngIf: signOutVisible -->
+                            </div>
+                            <div class="top-nav-wrapper-item">
+                                <!-- ngIf: cartVisible -->
+                                <div class="top-nav-container-item ng-scope" ng-if="cartVisible"><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/cart"
+                                        title="Go to your cart.">Cart (<span class="link ng-binding">0</span>)</a></div>
+                                <!-- end ngIf: cartVisible -->
+                            </div>
+                            <div class="top-nav-wrapper-item">
+                                <!-- ngIf: checkOutVisible -->
+                            </div>
+                            <div class="top-nav-wrapper-item">
+
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="search desktop">
+                            <form role="search" data-ng-submit="quickSearch($event)"
+                                class="ng-pristine ng-valid ng-valid-maxlength">
+                                <div class="sr-only" aria-live="assertive" id="ariaSearchResults"></div>
+                                <div class="form-group">
+                                    <buttton tabindex="-1" role="button" data-ng-click="quickSearch($event)"
+                                        class="btn-search-icon btn btn-naked" title="Search for products in store"
+                                        aria-label="Search"><i
+                                            class="fa fa-search search-icon-text fa-flip-horizontal"></i></buttton>
+                                    <input type="text" maxlength="230" data-ng-model="searchTerm"
+                                        class="searchfield form-control input-sm wideBox ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                        limited-special-char="[^0-9a-zA-Z \-\.\']"
+                                        placeholder="Search for products in store" title="Search for products in store"
+                                        aria-label="Search for products in store">
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="mobile buttons" style="">
+                    <!--mobile menu button and search button, shown only in sm view -->
+                    <a ng-show="signInVisible" class="toggle-menu"
+                        href="https://store.ecompanystore.com//elastic/Shop/Signin?returnUrl=/elastic/Shop"
+                        aria-label="Sign in button">
+                        <i class="fa fa-sign-in"></i>
+                    </a>
+                    <a ng-show="!signInVisible" class="toggle-menu ng-hide"
+                        href="https://store.ecompanystore.com//elastic/Home/Logoff/" aria-label="Sign out button">
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+                    <a class="toggle-search" ng-click="toggleMobileSearch()" aria-label="Search button">
+                        <i class="fa fa-search fa-flip-horizontal"></i>
+                    </a>
+                    <a href="https://store.ecompanystore.com//elastic/Shop/#/cart" title="Go to your cart."
+                        aria-label="shopping cart">
+                        <i class="fa fa-shopping-cart fa-flip-horizontal"></i><span class="link ng-binding">0</span>
+                    </a>
+                    <a class="toggle-menu" data-ng-click="toggleMobileMenu()" aria-label="menu button">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+
+                <!-- search mobile, for now I had to do it as two differnt elements due to conflict with angular and media query -->
+                <div class="search mobile ng-hide" ng-show="showMobileSearch">
+                    <form class="navbar-right ng-pristine ng-valid ng-valid-maxlength" role="search"
+                        ng-submit="quickSearch($event)">
+                        <div class="form-group">
+                            <buttton tabindex="-1" role="button" data-ng-click="quickSearch($event)"
+                                class="btn-search-icon btn btn-naked" title="Search for products in store"
+                                aria-label="Search"><i class="fa fa-search search-icon-text fa-flip-horizontal"></i>
+                            </buttton>
+                            <input type="text" maxlength="230" data-ng-model="searchTerm"
+                                class="searchfield form-control input-sm ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength"
+                                limited-special-char="[^0-9a-zA-Z \-\.\']" placeholder="Search for products in store"
+                                title="Search for products in store">
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+
+                <div class="clearfix"></div>
+
+                <nav class="main-nav primary" role="navigation" aria-label="Main Navigation">
+
+                    <div class="mobile ng-hide" ng-show="showMobileMenu">
+                        <!-- ngIf: signInVisible --><a ng-if="signInVisible"
+                            class="btn btn-primary btn-block buffer-top buffer-bottom-sm ng-scope"
+                            href="https://store.ecompanystore.com/elastic/Shop/Signin?returnUrl=">Sign In</a><!-- end ngIf: signInVisible -->
+                        <!-- ngIf: signOutVisible -->
+                    </div>
+                    <!--- Contains the state of the mobile menu -->
+                    <input id="main-menu-state" type="checkbox">
+                    <!-- Sample menu definition -->
+                    <ul id="main-menu" class="sm sm-ecs" data-smartmenus-id="17431942556057578">
+                        <li>
+                            <a href="https://store.ecompanystore.com/elastic/Shop/#/catalog/2080-New-Arrivals" aria-label="All Items">
+                                <span class="bold">New Arrivals</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="has-submenu" id="sm-17431942556057578-1" aria-haspopup="true"
+                                aria-controls="sm-17431942556057578-2" aria-expanded="false"><span
+                                    class="bold">Apparel</span><span class="sub-arrow"></span></a>
+                            <ul id="sm-17431942556057578-2" role="group" aria-hidden="true"
+                                aria-labelledby="sm-17431942556057578-1" aria-expanded="false">
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2081-Athletic">Athletic</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2082-Headwear">Headwear</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2083-Outerwear">Outerwear</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2520-Polos">Polos</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2086-T-Shirts">T-Shirts</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2084-Socks">Socks</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Apparel/2085-Sweaters-Sweatshirts">Sweaters
+                                        &amp; Sweatshirts</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="has-submenu" id="sm-17431942556057578-3" aria-haspopup="true"
+                                aria-controls="sm-17431942556057578-4" aria-expanded="false"><span
+                                    class="bold">Merchandise</span><span class="sub-arrow"></span></a>
+                            <ul id="sm-17431942556057578-4" role="group" aria-hidden="true"
+                                aria-labelledby="sm-17431942556057578-3" aria-expanded="false">
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2088-Accessories">Accessories</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2555-Merchandise">Buttons</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2089-Bag">Bag</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2178-Children-and-Pets-For-the-Family">Children
+                                        and Pets/For the Family</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2087-Drinkware">Drinkware</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2489-Golf">Golf</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2186-Home-Decor">Home
+                                        Decor</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2090-Notebooks-Stationary">Notebooks
+                                        &amp; Stationary</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2091-Office-and-Tech-Accessories">Office
+                                        &amp; Tech Accessories</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2185-Outdoor-and-Fitness">Outdoor
+                                        and Fitness</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2092-Stickers-Posters">Stickers</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2093-Travel">Travel</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Merchandise/2094-Miscellaneous">Miscellaneous</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="has-submenu" id="sm-17431942556057578-5" aria-haspopup="true"
+                                aria-controls="sm-17431942556057578-6" aria-expanded="false"><span
+                                    class="bold">Collections</span><span class="sub-arrow"></span></a>
+                            <ul id="sm-17431942556057578-6" role="group" aria-hidden="true"
+                                aria-labelledby="sm-17431942556057578-5" aria-expanded="false">
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2187-BeWell">Be
+                                        Well</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2188-Community">Community</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2189-DEI">DEI</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2190-ElastiCares">ElastiCares</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2191-PRIDE">PRIDE</a>
+                                </li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/2096-Last-Chance">LAST
+                                        CHANCE!</a></li>
+                                <li><a
+                                        href="https://store.ecompanystore.com//elastic/Shop/#/catalog/Collections/3064-Signature-Series">Signature
+                                        Series</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </nav>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+        </header>
+    </div>
+
+    <div class="page-overlay" loader="" style="display: none;">
+        <div class="message-wrapper">
+            <div class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <h1 class="message">
+                Processing your order
+            </h1>
+        </div>
+    </div>
+
+
+    <style>
+        .update-panel .title {
+            line-height: 120%;
+        }
+
+        .update-panel .title.no-message {
+            padding-top: 14px;
+        }
+
+        .priceChangeUpdateContent {
+            display: flex;
+            align-items: center;
+        }
+
+        .priceChangeUpdatePriceBox {
+            display: flex;
+            flex-direction: column;
+            padding: 7.5px;
+        }
+
+        .cartMsgImg {
+            position: relative;
+            top: 5px;
+            width: 50px;
+        }
+
+        .cartMsgPriceChangePriceBox {
+            display: flex;
+            gap: 5px;
+        }
+
+        .cartMsgChangedPriceText {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        .cartMsgChangedProductNameText {
+            color: dimgray;
+        }
+    </style>
+    <!-- ngRepeat: item in message['popup'] | limitTo: 1 -->
+
+    <main id="mainContent" style="outline: none;">
+        <!-- ngView: -->
+        <div data-ng-view="" class="ng-scope" style="">
+            <script type="text/javascript" class="ng-scope">
+                var ECSStores = ECSStores || {};
+                ECSStores.CarouselSlides = [
+                    { storeCode: 'ELS', src: 'https://store.ecompanystore.com/Content/img/ELS/carousel/Hero_1.png', alt: 'Welcome to the Elastic Store', href: "https://store.ecompanystore.com/Shop/#/catalog/2073-All-Items", title: "", text: "", position: "bottom-right", theme: "", transparency: "" },
+                    { storeCode: 'ELS', src: 'https://store.ecompanystore.com/Content/img/ELS/carousel/Hero_2.jpg', alt: 'Welcome to the Elastic Store', href: "https://store.ecompanystore.com/Shop/#/catalog/2080-New-Arrivals", title: "", text: "", position: "bottom-right", theme: "", transparency: "" },
+                ];
+            </script>
+
+            <div class="container ng-scope">
+                <ecs-carousel store-code="'ELS'" class="ng-isolate-scope">
+                    <div class="align-center">
+                        <!-- ngIf: crl.slides -->
+                        <section aria-label="carousel images" class="carousel slide ng-scope" ng-if="crl.slides"
+                            data-ride="carousel" aria-labelledby="carousel images" style="">
+                            <div ng-mouseenter="pause()" ng-mouseleave="play()"
+                                class="uib-carousel carousel ng-isolate-scope" ng-swipe-right="prev()"
+                                ng-swipe-left="next()" interval="crl.carouselInterval"
+                                show-toggle="crl.shouldShowToggle()" default-interval="crl.defaultInterval"
+                                is-playing="crl.isPlaying()" carousel-interval-value="crl.carouselIntervalValue">
+                                <div class="carousel-inner" ng-transclude="">
+                                    <!-- ngRepeat: slide in crl.slides track by $index -->
+                                    <div ng-class="{
+'active': active
+}" class="item text-center ng-scope ng-isolate-scope active" ng-transclude=""
+                                        data-ng-repeat="slide in crl.slides track by $index" active="slide.active"
+                                        style="">
+                                        <a href="https://store.ecompanystore.com//elastic/Shop/#/catalog/2073-All-Items"
+                                            data-accessibility-id="skip-to-main-accessibility_0" aria-label=""
+                                            ng-focus="crl.slideOnFocus()" ng-blur="crl.slideOnBlur()" class="ng-scope">
+                                            <img data-ng-src="https://store.ecompanystore.com//elastic/Content/img/ELS/carousel/Hero_1.png"
+                                                alt="Current slide 1 of 2. Welcome to the Elastic Store"
+                                                class="image image-main"
+                                                src="https://store.ecompanystore.com//elastic/Content/img/ELS/carousel/Hero_1.png">
+                                            <div class="carousel-caption ng-hide" ng-show="slide.title + slide.text">
+                                                @* only show this when it actually contains text *@
+                                                <div class="caption-inner bottom-right  ">
+                                                    <h1 ng-bind-html="slide.title" class="ng-binding"></h1>
+                                                    <p ng-bind-html="slide.text" class="ng-binding"></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- end ngRepeat: slide in crl.slides track by $index -->
+                                    <div ng-class="{
+'active': active
+}" class="item text-center ng-scope ng-isolate-scope" ng-transclude=""
+                                        data-ng-repeat="slide in crl.slides track by $index" active="slide.active"
+                                        style="">
+                                        <a href="https://store.ecompanystore.com/elastic/Shop/#/catalog/2080-New-Arrivals"
+                                            data-accessibility-id="skip-to-main-accessibility_1" aria-label=""
+                                            ng-focus="crl.slideOnFocus()" ng-blur="crl.slideOnBlur()" class="ng-scope">
+                                            <img data-ng-src="https://store.ecompanystore.com//elastic/Content/img/ELS/carousel/Hero_2.jpg"
+                                                alt="Current slide 2 of 2. Welcome to the Elastic Store"
+                                                class="image image-main"
+                                                src="https://store.ecompanystore.com/elastic/Content/img/ELS/carousel/Hero_2.jpg">
+                                            <div class="carousel-caption ng-hide" ng-show="slide.title + slide.text">
+                                                @* only show this when it actually contains text *@
+                                                <div class="caption-inner bottom-right  ">
+                                                    <h1 ng-bind-html="slide.title" class="ng-binding"></h1>
+                                                    <p ng-bind-html="slide.text" class="ng-binding"></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- end ngRepeat: slide in crl.slides track by $index -->
+                                    <!-- This anchor is only used to keep the focus inside the carousel while the slide transition is on going
+because the slides cannot be focused while they're moving into (or out of) view' -->
+                                    <a class="focus-bay invisible ng-scope" aria-hidden="true"></a>
+                                </div>
+                                <div class="carousel-indicators">
+                                    <!-- ngIf: showToggle -->
+                                    <a role="button" id="prevSliderBtn" href="" class=""
+                                        ng-focus="updatePrevNextSlideOnFocus($event, '.previous-liveregion')"
+                                        ng-blur="play()" ng-click="prev()" ng-show="slides.length > 1">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                        <span class="sr-only previous-liveregion ng-binding" aria-live="off">previous
+                                            Slide 1 of 2</span>
+                                    </a>
+                                    <ol class="padd-left-none" ng-show="slides.length > 1">
+                                        <!-- ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->
+                                        <!-- ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->
+                                        <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index"
+                                            ng-class="{ active: isActive(slide) }" tabindex="0" ng-focus="pause()"
+                                            ng-blur="play()"
+                                            ng-keydown="$event.keyCode === 13 ? selectSlide(slide) : ''"
+                                            ng-click="selectSlide(slide)" class="ng-scope active">
+                                            <span class="sr-only ng-binding">slide 1 of
+                                                2<!-- ngIf: isActive(slide) --><span ng-if="isActive(slide)"
+                                                    class="ng-scope" style="">, currently
+                                                    active</span><!-- end ngIf: isActive(slide) --></span>
+                                        </li>
+                                        <!-- end ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->
+                                        <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index"
+                                            ng-class="{ active: isActive(slide) }" tabindex="0" ng-focus="pause()"
+                                            ng-blur="play()"
+                                            ng-keydown="$event.keyCode === 13 ? selectSlide(slide) : ''"
+                                            ng-click="selectSlide(slide)" class="ng-scope">
+                                            <span class="sr-only ng-binding">slide 2 of
+                                                2<!-- ngIf: isActive(slide) --></span>
+                                        </li>
+                                        <!-- end ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->
+                                    </ol>
+                                    <a role="button" id="nextSliderBtn" href="" class=""
+                                        ng-focus="updatePrevNextSlideOnFocus($event, '.liveregion')" ng-blur="play()"
+                                        ng-click="nextSlideBtn()" ng-show="slides.length > 1">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                        <span class="sr-only liveregion ng-binding" aria-live="off">next Slide 1 of
+                                            2</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </section><!-- end ngIf: crl.slides -->
+                    </div>
+                    <!-- ngIf: currentSlide.title + crl.currentSlide.text -->
+                </ecs-carousel>
+            </div>
+
+            <div class="container buffer-top ng-scope">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 buffer-bottom-sm">
+                        <a data-ng-click="setUrl('/catalog/2087-Drinkware')" class="image image-portal">
+                            <img src="https://store.ecompanystore.com//elastic/Content/img/ELS/mod3_b.png"
+                                alt="Drinkware">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 buffer-bottom-sm">
+                        <a data-ng-click="setUrl('/catalog/2078-Apparel')" class="image image-portal">
+                            <img src="https://store.ecompanystore.com//elastic/Content/img/ELS/mod3_a.png"
+                                alt="Apparel">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 buffer-bottom-sm">
+                        <a data-ng-click="setUrl('/catalog/2082-Headwear')" class="image image-portal">
+                            <img src="https://store.ecompanystore.com//elastic/Content/img/ELS/mod3_c.png"
+                                alt="Accessories">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- LANGFLOW AQUI -->
+    <script
+        src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js"></script>
+    <langflow-chat window_title="Análise Ecommerce" flow_id="be365d9e-4049-43ac-89d1-8a32f3bcbdfe" host_url="http://192.168.1.88:7860" chat_position="top-left"></langflow-chat>
+
+    <footer>
+        <div class="container-fluid footer-bg footer-wrapper buffer-top">
+            <div class="container buffer-bottom">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-6 pull-right">
+                        <nav>
+                            <ul>
+                                <li><a href="https://store.ecompanystore.com/elastic/Shop/#/">Home</a></li>
+                                <li class="hidden-xs">|</li>
+                                <li><a href="https://store.ecompanystore.com/elastic/Shop/#/contactus">Contact</a></li>
+                                <li class="hidden-xs">|</li>
+                                <li><a href="https://store.ecompanystore.com/elastic/Shop/#/privacy">Privacy &amp; Legal</a></li>
+                                <li class="hidden-xs">|</li>
+                                <li><a href="https://store.ecompanystore.com/elastic/Shop/#/help">FAQ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-6 pull-left">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-5 col-xs-12 col-sm-12">
+                                © 2025 All Rights Reserved
+                            </div>
+                            <div class="col-md-6 col-lg-7 col-xs-12 col-sm-12">
+                                Powered by CIC | eCompanyStore
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="container">
+                <span class="pull-right">
+                    v.1
+                </span>
+            </div>
+        </div>
+
+    </footer>
+
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/jquery?v=KsvE_F6clhCoCsVlmL6zX6C1h07cnt0n4d6USeP7drI1"></script>
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/angular?v=Z4hWkwvw3BYJPTLhy16dnDHYjLUjkzNotCEDbK7SB4k1"></script>
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/scripts?v=Eu5mfIR8XVNkAnRbvq5XDXinivfGO4UiHnhRoWK-CHE1"></script>
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/components?v=NAB4GHTE4xxt2pFzWjaS-ySNc_lOBqZljvsRk1H9v-81"></script>
+    <script
+        src="https://store.ecompanystore.com//elastic/bundles/files/signalr?v=y_4IpeeDdgoHqAhjqu2f3QsBnP-e4GuBLMt7WpNZnIM1"></script>
+
+
+    <!-- SmartMenus jQuery init -->
+    <script type="text/javascript">
+        $(function () {
+            var $menu = $('#main-menu');
+            if ($menu.length) {
+                //New Smart menus
+                $menu.smartmenus({
+                    subMenusSubOffsetX: 1,
+                    subMenusSubOffsetY: -8
+                });
+            }
+
+        });
+    </script>
+
+    <div>
+        <script id="SendToFriendModalContent" type="text/ng-template">
+
+<div class="modal-header">
+    <button type="button" class="close" data-ng-click="cancel()" aria-label="close">&times;</button>
+    <h3 class="modal-title">Share this item with a friend</h3>
+</div>
+<form role="form" name="shareForm" data-ng-submit="sendToFriend(shareForm, this)" novalidate="">
+    <div class="modal-body" data-ng-init="resetSendToFriend(this)">
+        <div class="form-group" data-ng-class="((sendToFriendSubmitted && shareForm.SendToName.$invalid && !shareForm.SendToName.$pristine) || (sendToFriendSubmitted && sendToFriendError && shareForm.SendToName.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToName">*Name:</label>
+            <input placeholder="Enter name to send to" type="text" id="SendToName" name="SendToName" class="form-control" maxlength="40" data-ng-required="true" data-ng-model="sendToFriendToName" />
+            <span data-ng-show="((sendToFriendSubmitted && shareForm.SendToName.$invalid && !shareForm.SendToName.$pristine) || (sendToFriendSubmitted && sendToFriendError && shareForm.SendToName.$invalid))">What's your friend's name?</span>
+        </div>
+        <div class="form-group" data-ng-class="((sendToFriendSubmitted && shareForm.SendToEmail.$invalid && !shareForm.SendToEmail.$pristine) || (sendToFriendSubmitted && shareForm.SendToEmail.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToEmail">*Email:</label>
+            <input placeholder="Enter email to send to" type="email" id="SendToEmail" name="SendToEmail" class="form-control" maxlength="100" data-ng-required="true" data-ng-model="sendToFriendToEmail" />
+            <span data-ng-show="((sendToFriendSubmitted && shareForm.SendToEmail.$invalid && !shareForm.SendToEmail.$pristine) || (sendToFriendSubmitted && sendToFriendSubmitted && shareForm.SendToEmail.$invalid))">That email doesn't look right.</span>
+        </div>
+        <div class="form-group" data-ng-class="((shareForm.SendToComments.$invalid && !shareForm.SendToComments.$pristine) || (sendToFriendSubmitted && sendToFriendError && shareForm.SendToComments.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToComments">*Comments:</label>
+            <textarea id="SendToComments" class="form-control" name="SendToComments" placeholder="Write your message here" rows="4" cols="40" data-ng-required="true" data-ng-model="sendToFriendComments"></textarea>
+            <span data-ng-show="((sendToFriendSubmitted && shareForm.SendToComments.$invalid && !shareForm.SendToComments.$pristine) || (sendToFriendSubmitted && sendToFriendError && shareForm.SendToComments.$invalid))">Comments must be provided!</span>
+        </div>
+        <div class="form-group">
+            <label for="CopyMe">
+                <input type="checkbox" id="CopyMe" name="CopyMe" data-ng-model="CopySharer" />
+                Copy me on this email
+            </label>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" data-ng-disabled="shareForm.SendToName.$invalid || shareForm.SendToComments.$invalid || shareForm.SendToEmail.$viewValue == ''" class="btn btn-primary" title="Send this product to your friend"><span class="btn-arrow">Send</span></button>
+    </div>
+</form>
+
+</script>
+    </div>
+    <div>
+        <script id="EmailCartModalContent" type="text/ng-template">
+
+<div class="modal-header">
+    <button type="button" class="close" data-ng-click="cancel()" aria-label="close">&times;</button>
+    <h3 class="modal-title">Share this cart</h3>
+</div>
+<form role="form" name="shareCartForm" data-ng-submit="emailCart(shareCartForm, this)" novalidate="">
+    <div class="modal-body" data-ng-init="resetSendToFriend(this)">
+        <div class="form-group" data-ng-class="((emailCartSubmitted && shareCartForm.SendToName.$invalid && !shareCartForm.SendToName.$pristine) || (emailCartSubmitted && emailCartError && shareCartForm.SendToName.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToName">*Name:</label>
+            <input placeholder="Enter name to send to" type="text" id="SendToName" name="SendToName" class="form-control" maxlength="40" data-ng-required="true" data-ng-model="emailCartToName" />
+            <span data-ng-show="((emailCartSubmitted && shareForm.SendToName.$invalid && !shareCartForm.SendToName.$pristine) || (sendToFriendSubmitted && emailCartError && shareCartForm.SendToName.$invalid))">What's your friend's name?</span>
+        </div>
+        <div class="form-group" data-ng-class="((emailCartSubmitted && shareCartForm.SendToEmail.$invalid && !shareCartForm.SendToEmail.$pristine) || (emailCartSubmitted && shareCartForm.SendToEmail.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToEmail">*Email:</label>
+            <input placeholder="Enter email to send to" type="email" id="SendToEmail" name="SendToEmail" class="form-control" maxlength="100" data-ng-required="true" data-ng-model="emailCartToEmail" />
+            <span data-ng-show="((emailCartSubmitted && shareCartForm.SendToEmail.$invalid && !shareCartForm.SendToEmail.$pristine) || (emailCartSubmitted && emailCartError && shareCartForm.SendToEmail.$invalid))">That email doesn't look right.</span>
+        </div>
+        <div class="form-group" data-ng-class="((shareCartForm.SendToComments.$invalid && !shareCartForm.SendToComments.$pristine) || (emailCartSubmitted && emailCartError && shareCartForm.SendToComments.$invalid)) ? 'has-error' : ''">
+            <label class="control-label" for="SendToComments">*Comments:</label>
+            <textarea id="SendToComments" class="form-control" name="SendToComments" placeholder="Write your message here" rows="4" cols="40" data-ng-required="true" data-ng-model="emailCartComments"></textarea>
+            <span data-ng-show="((emailCartSubmitted && shareCartForm.SendToComments.$invalid && !shareCartForm.SendToComments.$pristine) || (emailCartSubmitted && emailCartError && shareCartForm.SendToComments.$invalid))">Comments must be provided!</span>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" data-ng-disabled="shareCartForm.SendToName.$invalid || shareCartForm.SendToComments.$invalid || shareCartForm.SendToEmail.$viewValue == ''" class="btn btn-primary" title="Share this cart with your friend"><span class="btn-arrow">Send</span></button>
+    </div>
+</form>
+
+</script>
+    </div>
+    <div data-ng-controller="TimerWarningModalCtrl" class="ng-scope">
+        <script id="timeoutWarningContent" type="text/ng-template">
+<div class="modal-footer">
+    <button ng-click="$close()" class="btn btn-danger">Continue</button>
+</div>
+</script>
+    </div>
+    <script id="validationErrorsContent" type="text/ng-template">
+<div class="modal-header">
+<h3 class="modal-title">Checkout Errors</h3>
+</div>
+<div class="modal-body">
+<table class="fixed">
+    <thead>
+        <tr>
+            <th style="width: 250px">Product</th>
+            <th style="width: 300px">Reason</th>
+        </tr>
+    </thead>
+</table>
+
+</div>
+<div class="modal-footer">
+<button ng-click="$close()" class="btn btn-danger">Continue</button>
+</div>
+</script>
+    <span id="okta-plugin-message-channel-available" style="display: none;"></span>
+</body>
+
+</html>

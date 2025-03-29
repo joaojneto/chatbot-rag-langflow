@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Floating chat button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 28px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+        .chat-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Chatbox container */
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Chat header */
+        .chat-header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .close-btn:hover {
+            color: #ddd;
+        }
+
+        /* Chat messages */
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background: #f1f1f1;
+            align-self: flex-start;
+        }
+
+        /* Loading animation */
+        .loading {
+            width: 50px;
+            height: 50px;
+            background-image: url('https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Frf4nb3r7qsn2u9fjrf47.gif'); /* Replace with a better loading gif */
+            background-size: contain;
+            background-repeat: no-repeat;
+            align-self: flex-start;
+        }
+
+        /* Chat input */
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            border-radius: 20px;
+            background: #f1f1f1;
+        }
+
+        .chat-input button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-input button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-button" onclick="toggleChat()">💬</div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            Análise Ecommerce
+            <span class="close-btn" onclick="toggleChat()">×</span>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="userMessage" placeholder="Type a message..." onkeypress="handleKeyPress(event)" />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chatBox = document.getElementById("chatBox");
+            chatBox.style.display = (chatBox.style.display === "flex") ? "none" : "flex";
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById("userMessage").value;
+            if (!userMessage) return;
+
+            var chatMessages = document.getElementById("chatMessages");
+
+            // Add user message
+            var userMsgDiv = document.createElement("div");
+            userMsgDiv.textContent = userMessage;
+            userMsgDiv.classList.add("message", "user-message");
+            chatMessages.appendChild(userMsgDiv);
+
+            // Add loading animation
+            var loadingDiv = document.createElement("div");
+            loadingDiv.classList.add("loading");
+            loadingDiv.id = "loadingIndicator";
+            chatMessages.appendChild(loadingDiv);
+
+            // Auto-scroll to latest message
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Send message to server
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove loading animation
+                document.getElementById("loadingIndicator").remove();
+
+                // Add bot response
+                var botMsgDiv = document.createElement("div");
+                botMsgDiv.textContent = data.reply;
+                botMsgDiv.classList.add("message", "bot-message");
+                chatMessages.appendChild(botMsgDiv);
+
+                // Auto-scroll to latest message
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            });
+
+            // Clear input
+            document.getElementById("userMessage").value = "";
+        }
+    </script>
+
+</body>
+</html>
